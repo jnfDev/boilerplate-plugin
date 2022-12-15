@@ -29,9 +29,6 @@ final class AdminPage
         if ( 'toplevel_page_' . self::SLUG !==  $screen->id ) {
             return;
         }
-
-        wp_register_style( self::SLUG, $this->plugin->rootURL . 'admin/assets/build/admin-page.css' , [], $this->plugin->pluginVersion );
-        wp_register_script( self::SLUG, $this->plugin->rootURL . 'admin/assets/build/admin-page.js', [ 'wp-i18n' ],  $this->plugin->pluginVersion, true );
     }
 
     public function registerMenu(): void
@@ -48,15 +45,7 @@ final class AdminPage
 
     public function renderMenuPage(): void
     {   
-        /**
-         * View's variables 
-         */
-        $assetUrl = $this->plugin->rootURL . '/admin/assets';
 
-        // Add styles + script
-        wp_enqueue_style( self::SLUG );
-        wp_enqueue_script( self::SLUG );
-        wp_set_script_translations( self::SLUG, 'boilerplate-plugin-domain', $this->plugin->rootPath . '/languages/' );
         
         require_once __DIR__ . '/views/admin-page.php';
     }
