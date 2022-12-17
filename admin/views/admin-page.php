@@ -1,3 +1,1 @@
-<h1 id="jnfdev-admin-page">
-    <!-- Hello World 😃 -->
-</h1>
+<div id="app"></div>
