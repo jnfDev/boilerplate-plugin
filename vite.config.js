@@ -6,7 +6,6 @@ import vue from '@vitejs/plugin-vue'
 import * as dotenv from 'dotenv'
 import fs from 'fs'
 
-
 dotenv.config()
 
 const devPort = 3030;
